@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1741C59D258C8414000EEDC0 /* HomeBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741C59C258C8414000EEDC0 /* HomeBaseModel.swift */; };
+		1741C59F258C842A000EEDC0 /* RowsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741C59E258C842A000EEDC0 /* RowsDataModel.swift */; };
+		1741C5A1258C8456000EEDC0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741C5A0258C8456000EEDC0 /* HomeViewModel.swift */; };
+		1741C5A3258C8472000EEDC0 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741C5A2258C8472000EEDC0 /* HomeTableViewCell.swift */; };
 		17CD77B2258B7F210033DE1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CD77B1258B7F210033DE1D /* AppDelegate.swift */; };
 		17CD77B4258B7F210033DE1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CD77B3258B7F210033DE1D /* SceneDelegate.swift */; };
 		17CD77B6258B7F210033DE1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CD77B5258B7F210033DE1D /* ViewController.swift */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1741C59C258C8414000EEDC0 /* HomeBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBaseModel.swift; sourceTree = "<group>"; };
+		1741C59E258C842A000EEDC0 /* RowsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowsDataModel.swift; sourceTree = "<group>"; };
+		1741C5A0258C8456000EEDC0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		1741C5A2258C8472000EEDC0 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		17CD77AE258B7F210033DE1D /* TelstraPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelstraPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17CD77B1258B7F210033DE1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17CD77B3258B7F210033DE1D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +84,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1741C597258C838F000EEDC0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1741C5A0258C8456000EEDC0 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1741C598258C8390000EEDC0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				17CD77B1258B7F210033DE1D /* AppDelegate.swift */,
+				17CD77B3258B7F210033DE1D /* SceneDelegate.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1741C599258C8390000EEDC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1741C59C258C8414000EEDC0 /* HomeBaseModel.swift */,
+				1741C59E258C842A000EEDC0 /* RowsDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1741C59A258C8390000EEDC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1741C5A2258C8472000EEDC0 /* HomeTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1741C59B258C83B0000EEDC0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				17CD77B5258B7F210033DE1D /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		17CD77A5258B7F200033DE1D = {
 			isa = PBXGroup;
 			children = (
@@ -99,9 +149,11 @@
 		17CD77B0258B7F210033DE1D /* TelstraPOC */ = {
 			isa = PBXGroup;
 			children = (
-				17CD77B1258B7F210033DE1D /* AppDelegate.swift */,
-				17CD77B3258B7F210033DE1D /* SceneDelegate.swift */,
-				17CD77B5258B7F210033DE1D /* ViewController.swift */,
+				1741C59B258C83B0000EEDC0 /* Controller */,
+				1741C598258C8390000EEDC0 /* Common */,
+				1741C599258C8390000EEDC0 /* Model */,
+				1741C59A258C8390000EEDC0 /* View */,
+				1741C597258C838F000EEDC0 /* ViewModel */,
 				17CD77B7258B7F210033DE1D /* Main.storyboard */,
 				17CD77BA258B7F220033DE1D /* Assets.xcassets */,
 				17CD77BC258B7F220033DE1D /* LaunchScreen.storyboard */,
@@ -260,8 +312,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				17CD77B6258B7F210033DE1D /* ViewController.swift in Sources */,
+				1741C5A1258C8456000EEDC0 /* HomeViewModel.swift in Sources */,
+				1741C5A3258C8472000EEDC0 /* HomeTableViewCell.swift in Sources */,
 				17CD77B2258B7F210033DE1D /* AppDelegate.swift in Sources */,
+				1741C59F258C842A000EEDC0 /* RowsDataModel.swift in Sources */,
 				17CD77B4258B7F210033DE1D /* SceneDelegate.swift in Sources */,
+				1741C59D258C8414000EEDC0 /* HomeBaseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
