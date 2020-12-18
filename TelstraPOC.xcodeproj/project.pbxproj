@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,8 @@
 		1741C59F258C842A000EEDC0 /* RowsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741C59E258C842A000EEDC0 /* RowsDataModel.swift */; };
 		1741C5A1258C8456000EEDC0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741C5A0258C8456000EEDC0 /* HomeViewModel.swift */; };
 		1741C5A3258C8472000EEDC0 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741C5A2258C8472000EEDC0 /* HomeTableViewCell.swift */; };
+		1741C5A6258C8533000EEDC0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1741C5A5258C8533000EEDC0 /* Alamofire */; };
+		1741C5A9258C855B000EEDC0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1741C5A8258C855B000EEDC0 /* SnapKit */; };
 		17CD77B2258B7F210033DE1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CD77B1258B7F210033DE1D /* AppDelegate.swift */; };
 		17CD77B4258B7F210033DE1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CD77B3258B7F210033DE1D /* SceneDelegate.swift */; };
 		17CD77B6258B7F210033DE1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CD77B5258B7F210033DE1D /* ViewController.swift */; };
@@ -64,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1741C5A6258C8533000EEDC0 /* Alamofire in Frameworks */,
+				1741C5A9258C855B000EEDC0 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +200,10 @@
 			dependencies = (
 			);
 			name = TelstraPOC;
+			packageProductDependencies = (
+				1741C5A5258C8533000EEDC0 /* Alamofire */,
+				1741C5A8258C855B000EEDC0 /* SnapKit */,
+			);
 			productName = TelstraPOC;
 			productReference = 17CD77AE258B7F210033DE1D /* TelstraPOC.app */;
 			productType = "com.apple.product-type.application";
@@ -268,6 +276,10 @@
 				Base,
 			);
 			mainGroup = 17CD77A5258B7F200033DE1D;
+			packageReferences = (
+				1741C5A4258C8533000EEDC0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				1741C5A7258C855B000EEDC0 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 17CD77AF258B7F210033DE1D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -640,6 +652,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1741C5A4258C8533000EEDC0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
+		1741C5A7258C855B000EEDC0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1741C5A5258C8533000EEDC0 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1741C5A4258C8533000EEDC0 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		1741C5A8258C855B000EEDC0 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1741C5A7258C855B000EEDC0 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 17CD77A6258B7F200033DE1D /* Project object */;
 }
