@@ -11,6 +11,24 @@
         }
       },
       {
+        "package": "AlamofireImage",
+        "repositoryURL": "https://github.com/Alamofire/AlamofireImage.git",
+        "state": {
+          "branch": null,
+          "revision": "3e8edbeb75227f8542aa87f90240cf0424d6362f",
+          "version": "4.1.0"
+        }
+      },
+      {
+        "package": "SDWebImage",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
+        "state": {
+          "branch": null,
+          "revision": "e857b78ca4c8afe616b794aeb090d40f4e348072",
+          "version": "5.10.0"
+        }
+      },
+      {
         "package": "SnapKit",
         "repositoryURL": "https://github.com/SnapKit/SnapKit.git",
         "state": {

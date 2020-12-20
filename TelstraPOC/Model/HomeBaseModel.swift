@@ -7,13 +7,15 @@
 //
 
 import Foundation
-struct HomeBaseModel: Codable {
+import UIKit
+
+struct HomeBaseModel : Codable {
 let title: String?
-var rows: [RowsDataModel]?
+let rows: [RowsDataModel]?
 
 enum CodingKeys: String, CodingKey {
-case title
-case rows
+case title = "title"
+case rows = "rows"
 }
 
 init(from decoder: Decoder) throws {
@@ -22,3 +24,4 @@ init(from decoder: Decoder) throws {
     rows = try values.decodeIfPresent([RowsDataModel].self, forKey: .rows)
  }
 }
+

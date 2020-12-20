@@ -7,15 +7,17 @@
 //
 
 import Foundation
+import UIKit
+
 struct RowsDataModel: Codable {
     let title: String?
     let description: String?
     let imageHref: String?
 
     enum CodingKeys: String, CodingKey {
-        case title
-        case description
-        case imageHref
+        case title = "title"
+        case description = "description"
+        case imageHref = "imageHref"
     }
 
     init(from decoder: Decoder) throws {
