@@ -67,7 +67,7 @@ class ViewController: UIViewController {
     func addActivityIndicator() {
         self.activityIndicator.center = self.view.center
         self.activityIndicator.hidesWhenStopped = true
-        self.activityIndicator.style = UIActivityIndicatorView.Style.large
+        self.activityIndicator.style = UIActivityIndicatorView.Style.gray
     }
 
     // Showing alert to user
