@@ -32,12 +32,10 @@ class TelstraPOCTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
     // Test table view present at home screen
     func testViewController() {
      XCTAssertNotNil(homeViewController.tableView, "should have a table view" )
     }
-    
     override func setUp() {
       super.setUp()
       urlSession = URLSession(configuration: .default)
@@ -47,7 +45,6 @@ class TelstraPOCTests: XCTestCase {
       urlSession = nil
       super.tearDown()
     }
-    
     // Asynchronous api call unit test cases for success and fail.
     func testHomeDataGetsHTTPStatusCode200() {
       let url = URL(string: "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json")
@@ -60,14 +57,14 @@ class TelstraPOCTests: XCTestCase {
           return
         } else if let statusCode = (response as? HTTPURLResponse)?.statusCode {
           if statusCode == 200 {
-            promise.fulfill()    //tells process is complete
+            promise.fulfill() // tells process is complete
           } else {
             XCTFail("Status code: \(statusCode)")  // show error
           }
         }
       }
       dataTask.resume()
-      wait(for: [promise], timeout: 5)   //tells wait for 5secs or throw error
+      wait(for: [promise], timeout: 5) // tells wait for 5secs or throw error
     }
 
 }

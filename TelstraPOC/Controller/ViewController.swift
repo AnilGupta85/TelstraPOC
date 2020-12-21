@@ -27,7 +27,6 @@ class ViewController: UIViewController {
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     var refreshControl = UIRefreshControl()
     var tableView: UITableView = UITableView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // adding UI conponents to view
@@ -40,7 +39,6 @@ class ViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(self.refreshHomeData(_:)), for: .valueChanged)
         tableView.addSubview(refreshControl)
     }
-    
     // Adding table view
     func addTableView() {
         tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeConstants.cellIdentifier)
@@ -54,9 +52,8 @@ class ViewController: UIViewController {
         self.tableView.dataSource = self
         view.addSubview(tableView)
     }
-    
-    func homeAPICallForData(){
-        //checking network connectivity then call API service
+    func homeAPICallForData() {
+        // checking network connectivity then call API service
          if Reachability.isConnectedToNetwork() {
             viewModel.homeViewController = self
             viewModel.getAllHomeData()
@@ -73,7 +70,7 @@ class ViewController: UIViewController {
         self.activityIndicator.style = UIActivityIndicatorView.Style.large
     }
 
-    //Showing alert to user
+    // Showing alert to user
     func showAlert(title: String, desc: String) {
         let alert = UIAlertController(title: title, message: desc, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: HomeConstants.okAlert, style: .default, handler: { action in
@@ -92,7 +89,7 @@ class ViewController: UIViewController {
     // refreshing home screen data
     @objc func refreshHomeData(_ sender: Any) {
         if Reachability.isConnectedToNetwork() {
-            viewModel.getAllHomeData() // GET API call for home data
+            homeAPICallForData()    // GET API call for home data
         } else {
             self.showAlert(title: HomeConstants.alertTitle, desc: HomeConstants.noNetworkAvailable)
             refreshControl.endRefreshing()
@@ -108,11 +105,10 @@ class ViewController: UIViewController {
 }
 
 // Extension of UITableView
-extension ViewController: UITableViewDataSource,UITableViewDelegate{
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
        return UITableView.automaticDimension
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if viewModel.baseModel != nil {
             guard let count = viewModel.baseModel?.rows?.count else {return 0}
@@ -121,10 +117,8 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate{
             return 0
         }
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeConstants.cellIdentifier, for: indexPath) as? HomeTableViewCell else {return UITableViewCell()}
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeConstants.cellIdentifier, for: indexPath) as? HomeTableViewCell else { return UITableViewCell() }
         cell.descriptionLbl.text = nil
         cell.headingLbl.text = nil
         cell.thumbnailImage.image = UIImage(named: "placeholderImage")

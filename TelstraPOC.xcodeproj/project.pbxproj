@@ -15,6 +15,7 @@
 		1741C5A6258C8533000EEDC0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1741C5A5258C8533000EEDC0 /* Alamofire */; };
 		1741C5A9258C855B000EEDC0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1741C5A8258C855B000EEDC0 /* SnapKit */; };
 		1741C5AB258DCF33000EEDC0 /* ReachabilityCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741C5AA258DCF33000EEDC0 /* ReachabilityCheck.swift */; };
+		17B182A425905BE6005E8176 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 17B182A325905BE6005E8176 /* .swiftlint.yml */; };
 		17CD77B2258B7F210033DE1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CD77B1258B7F210033DE1D /* AppDelegate.swift */; };
 		17CD77B6258B7F210033DE1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CD77B5258B7F210033DE1D /* ViewController.swift */; };
 		17CD77BB258B7F220033DE1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17CD77BA258B7F220033DE1D /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		1741C5A0258C8456000EEDC0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1741C5A2258C8472000EEDC0 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		1741C5AA258DCF33000EEDC0 /* ReachabilityCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityCheck.swift; sourceTree = "<group>"; };
+		17B182A325905BE6005E8176 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		17CD77AE258B7F210033DE1D /* TelstraPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelstraPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17CD77B1258B7F210033DE1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17CD77B5258B7F210033DE1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		1741C598258C8390000EEDC0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				17B182A325905BE6005E8176 /* .swiftlint.yml */,
 				1741C5AA258DCF33000EEDC0 /* ReachabilityCheck.swift */,
 				17CD77B1258B7F210033DE1D /* AppDelegate.swift */,
 			);
@@ -193,6 +196,7 @@
 				17CD77AA258B7F210033DE1D /* Sources */,
 				17CD77AB258B7F210033DE1D /* Frameworks */,
 				17CD77AC258B7F210033DE1D /* Resources */,
+				17B1829E25902D7F005E8176 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -297,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17B182A425905BE6005E8176 /* .swiftlint.yml in Resources */,
 				17CD77BE258B7F220033DE1D /* LaunchScreen.storyboard in Resources */,
 				17CD77BB258B7F220033DE1D /* Assets.xcassets in Resources */,
 			);
@@ -317,6 +322,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17B1829E25902D7F005E8176 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		17CD77AA258B7F210033DE1D /* Sources */ = {

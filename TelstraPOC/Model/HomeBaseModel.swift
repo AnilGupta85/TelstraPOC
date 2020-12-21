@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-struct HomeBaseModel : Codable {
+struct HomeBaseModel: Codable {
 let title: String?
 let rows: [RowsDataModel]?
 
 enum CodingKeys: String, CodingKey {
-case title = "title"
-case rows = "rows"
+case title
+case rows
 }
 
 init(from decoder: Decoder) throws {
@@ -24,4 +24,3 @@ init(from decoder: Decoder) throws {
     rows = try values.decodeIfPresent([RowsDataModel].self, forKey: .rows)
  }
 }
-
