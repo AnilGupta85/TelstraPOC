@@ -28,7 +28,9 @@ func getAllHomeData(){
                         debugPrint(jsonAPIResponse)
                         DispatchQueue.main.async{
                             self.homeViewController?.activityIndicator.stopAnimating()
+                            self.homeViewController?.refreshControl.endRefreshing()
                             self.homeViewController?.tableView.reloadData()
+                            //Set the title of the navigation bar
                             guard let title = self.baseModel?.title else { return }
                             self.homeViewController?.navigationController?.navigationBar.topItem?.title = title
                         }
@@ -76,6 +78,7 @@ func getAllHomeData(){
      }
      }
  */
+    
     //returing the heading label to view controller
     func returnHeadingLabel(indexpath: Int) -> String {
         guard let headingLabel = self.baseModel?.rows?[indexpath].title else { return ""}

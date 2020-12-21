@@ -36,7 +36,7 @@ class HomeTableViewCell: UITableViewCell {
         headingLbl.textColor = UIColor.black
         headingLbl.numberOfLines = 0
         headingLbl.lineBreakMode = .byWordWrapping
-        headingLbl.font = UIFont(name: "ArialMT", size: 18.0)
+        headingLbl.font = UIFont(name: "ArialMT", size: 20.0)
         contentView.addSubview(headingLbl)
 
         //adding description label to content view
@@ -44,7 +44,7 @@ class HomeTableViewCell: UITableViewCell {
         descriptionLbl.numberOfLines = 0
         descriptionLbl.textAlignment = .left
         descriptionLbl.lineBreakMode = .byWordWrapping
-        descriptionLbl.font = UIFont(name: "ArialMT", size: 12.0)
+        descriptionLbl.font = UIFont(name: "ArialMT", size: 16.0)
         contentView.addSubview(descriptionLbl)
         
         //updaing the constraints

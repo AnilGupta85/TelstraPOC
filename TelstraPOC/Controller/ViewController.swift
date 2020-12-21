@@ -25,17 +25,20 @@ static let destructiveValue = "destructive"
 class ViewController: UIViewController {
     var viewModel = HomeViewModel()
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
-    let refreshControl = UIRefreshControl()
+    var refreshControl = UIRefreshControl()
     var tableView: UITableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // adding UI conponents to view
         addActivityIndicator()  // Function to add activity Indicator
-        addRefreshControl()     // Function to add Pull to Refresh feature
         addTableView()          // Function to add UITableView programmatically
         homeTableViewLayout()   // Table view layout
         homeAPICallForData()    // GET API call for home data
+       // Add Pull to Refresh feature
+        refreshControl.attributedTitle = NSAttributedString(string: HomeConstants.updatingData)
+        refreshControl.addTarget(self, action: #selector(self.refreshHomeData(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
     }
     
     // Adding table view
@@ -43,7 +46,7 @@ class ViewController: UIViewController {
         tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeConstants.cellIdentifier)
         tableView.backgroundColor = UIColor.gray
         self.tableView.separatorColor = UIColor.clear
-        tableView.estimatedRowHeight = 100
+       // tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
         tableView.addSubview(activityIndicator)
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -57,18 +60,10 @@ class ViewController: UIViewController {
          if Reachability.isConnectedToNetwork() {
             viewModel.homeViewController = self
             viewModel.getAllHomeData()
-            self.navigationBarTitleSetup()
         } else {
             self.activityIndicator.stopAnimating()
             self.showAlert(title: HomeConstants.alertTitle, desc: HomeConstants.noNetworkAvailable)
         }
-    }
-
-    // Adding refresh control
-    func addRefreshControl() {
-        tableView.refreshControl = refreshControl
-        refreshControl.attributedTitle = NSAttributedString(string: HomeConstants.updatingData)
-        refreshControl.addTarget(self, action: #selector(refreshHomeData(_:)), for: .valueChanged)
     }
 
     // Adding activity indicator
@@ -76,7 +71,6 @@ class ViewController: UIViewController {
         self.activityIndicator.center = self.view.center
         self.activityIndicator.hidesWhenStopped = true
         self.activityIndicator.style = UIActivityIndicatorView.Style.large
-        activityIndicator.startAnimating()
     }
 
     //Showing alert to user
@@ -98,9 +92,10 @@ class ViewController: UIViewController {
     // refreshing home screen data
     @objc func refreshHomeData(_ sender: Any) {
         if Reachability.isConnectedToNetwork() {
-            refreshHomeScreenPulled()
+            viewModel.getAllHomeData() // GET API call for home data
         } else {
             self.showAlert(title: HomeConstants.alertTitle, desc: HomeConstants.noNetworkAvailable)
+            refreshControl.endRefreshing()
         }
     }
 
@@ -110,27 +105,14 @@ class ViewController: UIViewController {
             make.edges.equalToSuperview()
         }
     }
-
-    //Refresh the data on pull to refresh
-    func refreshHomeScreenPulled() {
-        viewModel.getAllHomeData()
-        if viewModel.baseModel != nil{
-            self.activityIndicator.stopAnimating()
-            self.refreshControl.endRefreshing()
-            self.navigationBarTitleSetup()
-            self.tableView.reloadData()
-        }
-    }
-
-    //Function to set the title of the navigation bar
-    func navigationBarTitleSetup() {
-        guard let title = self.viewModel.baseModel?.title else { return }
-        self.navigationController?.navigationBar.topItem?.title = title
-    }
 }
 
 // Extension of UITableView
 extension ViewController: UITableViewDataSource,UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+       return UITableView.automaticDimension
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if viewModel.baseModel != nil {
             guard let count = viewModel.baseModel?.rows?.count else {return 0}
@@ -146,12 +128,10 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate{
         cell.descriptionLbl.text = nil
         cell.headingLbl.text = nil
         cell.thumbnailImage.image = UIImage(named: "placeholderImage")
-
         if viewModel.baseModel?.rows != nil {
                 let headingLabel = self.viewModel.returnHeadingLabel(indexpath: indexPath.row)
                 let descriptionLabel = self.viewModel.returnDescriptionLabel(indexpath: indexPath.row)
                 let imageURL = self.viewModel.returnImage(indexpath: indexPath.row)
-
             if headingLabel != "" {
                 cell.headingLbl.text = headingLabel
             }
