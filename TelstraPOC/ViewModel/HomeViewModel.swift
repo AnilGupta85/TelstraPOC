@@ -12,7 +12,7 @@ import Alamofire
 class HomeViewModel {
     // MARK: - URL
     private var apiURL = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
-    weak var homeViewController: ViewController?
+    weak var homeViewController: HomeViewController?
     var baseModel: HomeBaseModel?
 
 func getAllHomeData() {
@@ -43,40 +43,7 @@ func getAllHomeData() {
             }
         }.resume()
   }
-    // API call using Alamofire framework
- /*   func getAllHomeData(){
-     AF.request(apiURL).response { response in
-     if let data = response.data {
-     // encoding the data received to UTF8
-     let encodingString = String(data: data, encoding: .isoLatin1)
-     let dataUsingTF8: Data? = encodingString?.data(using: .utf8)
-     if let dataUsingTF8 = dataUsingTF8 {
-     //Parse JSON response
-     do{
-     let jsonAPIResponse = try JSONDecoder().decode(HomeBaseModel.self, from: data)
-     self.baseModel = jsonAPIResponse
-     // self.baseModel.append(contentsOf: jsonAPIResponse)
-     debugPrint(jsonAPIResponse)
-     DispatchQueue.main.async{
-     self.homeViewController?.activityIndicator.stopAnimating()
-     self.homeViewController?.tableView.reloadData()
-     }
-     }
-     catch DecodingError.keyNotFound(let key, let context) {
-     Swift.print("could not find key \(key) in JSON: \(context.debugDescription)")
-     } catch DecodingError.valueNotFound(let type, let context) {
-     Swift.print("could not find type \(type) in JSON: \(context.debugDescription)")
-     } catch DecodingError.typeMismatch(let type, let context) {
-     Swift.print("type mismatch for type \(type) in JSON: \(context.debugDescription)")
-     } catch DecodingError.dataCorrupted(let context) {
-     Swift.print("data found to be corrupted in JSON: \(context.debugDescription)")
-     } catch let error as NSError {
-     NSLog("Error in read(from:ofType:) domain= \(error.domain), description= \(error.localizedDescription)")
-     }
-     }
-     }
-     }
- */
+
     // returing the heading label to view controller
     func returnHeadingLabel(indexpath: Int) -> String {
         guard let headingLabel = self.baseModel?.rows?[indexpath].title else { return ""}

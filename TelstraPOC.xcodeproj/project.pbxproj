@@ -17,7 +17,7 @@
 		1741C5AB258DCF33000EEDC0 /* ReachabilityCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741C5AA258DCF33000EEDC0 /* ReachabilityCheck.swift */; };
 		17B182A425905BE6005E8176 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 17B182A325905BE6005E8176 /* .swiftlint.yml */; };
 		17CD77B2258B7F210033DE1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CD77B1258B7F210033DE1D /* AppDelegate.swift */; };
-		17CD77B6258B7F210033DE1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CD77B5258B7F210033DE1D /* ViewController.swift */; };
+		17CD77B6258B7F210033DE1D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CD77B5258B7F210033DE1D /* HomeViewController.swift */; };
 		17CD77BB258B7F220033DE1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17CD77BA258B7F220033DE1D /* Assets.xcassets */; };
 		17CD77BE258B7F220033DE1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17CD77BC258B7F220033DE1D /* LaunchScreen.storyboard */; };
 		17CD77C9258B7F220033DE1D /* TelstraPOCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CD77C8258B7F220033DE1D /* TelstraPOCTests.swift */; };
@@ -50,7 +50,7 @@
 		17B182A325905BE6005E8176 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		17CD77AE258B7F210033DE1D /* TelstraPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelstraPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17CD77B1258B7F210033DE1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		17CD77B5258B7F210033DE1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		17CD77B5258B7F210033DE1D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		17CD77BA258B7F220033DE1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17CD77BD258B7F220033DE1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17CD77BF258B7F220033DE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		1741C59B258C83B0000EEDC0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				17CD77B5258B7F210033DE1D /* ViewController.swift */,
+				17CD77B5258B7F210033DE1D /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -348,7 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17CD77B6258B7F210033DE1D /* ViewController.swift in Sources */,
+				17CD77B6258B7F210033DE1D /* HomeViewController.swift in Sources */,
 				1741C5AB258DCF33000EEDC0 /* ReachabilityCheck.swift in Sources */,
 				1741C5A1258C8456000EEDC0 /* HomeViewModel.swift in Sources */,
 				1741C5A3258C8472000EEDC0 /* HomeTableViewCell.swift in Sources */,
@@ -451,7 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -505,7 +505,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -521,7 +521,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TelstraPOC/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -539,7 +539,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TelstraPOC/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
